@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Main {
 
@@ -59,8 +60,14 @@ public class Main {
                 {0, 0, 0, 5, 0}
         };
 
-        int inicio = 0; // vertice de inicio (A)
-        int fin = 4; // vertice final (E)
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Ingrese el vértice de inicio (A, B, C, D, E): ");
+        char inicioChar = scanner.next().charAt(0);
+        int inicio = inicioChar - 'A';
+
+        System.out.print("Ingrese el vértice final (A, B, C, D, E): ");
+        char finChar = scanner.next().charAt(0);
+        int fin = finChar - 'A';
 
         dijkstra(grafo, inicio, fin);
     }
